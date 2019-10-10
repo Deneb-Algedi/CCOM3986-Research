@@ -1,6 +1,8 @@
 # CCOM3986: Network Security Visualizations
 > Dianelys Soto-Cruz
+
 > Prof. Jose Ortiz-Ubarri
+
 > CCOM 3986
 
 ## Table of contents
