@@ -7,7 +7,7 @@
 
 ## Table of contents
 - [Description](#description)
--  [Screenshots](#screenshots)
+- [Screenshots](#screenshots)
 - [Prerequisites](#prerequisites)
 - [How to use](#how-to-use)
 - [Author](#author)
@@ -17,7 +17,7 @@ As my first research experience, I'm currently working on developing a web-based
 
 ## Screenshots 
 
-![alt text](https://raw.githubusercontent.com/https://github.com/Deneb-Algedi/Research/blob/master/calendar.png)
+![Calendar Heatmap](https://raw.githubusercontent.com/https://github.com/Deneb-Algedi/Research/blob/master/calendar.png)
 
 ## Prerequisites
 1. Web server
