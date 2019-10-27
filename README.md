@@ -17,6 +17,10 @@ As my first research experience, I'm currently working on developing a web-based
 
 ## Screenshots 
 
+_Stack Bars_
+![Stack Bars](https://raw.githubusercontent.com/Deneb-Algedi/Research/master/stackBars.png)
+
+_Calendar Heatmap_
 ![Calendar Heatmap](https://raw.githubusercontent.com/Deneb-Algedi/Research/master/calendar.png)
 
 ## Prerequisites
