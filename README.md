@@ -17,7 +17,7 @@ As my first research experience, I'm currently working on developing a web-based
 
 ## Screenshots 
 
-![Calendar Heatmap](https://raw.githubusercontent.com/https://github.com/Deneb-Algedi/Research/blob/master/calendar.png)
+![Calendar Heatmap](https://raw.githubusercontent.com/Deneb-Algedi/Research/master/calendar.png)
 
 ## Prerequisites
 1. Web server
