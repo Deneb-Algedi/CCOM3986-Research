@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+    
+  <link href="nav.css" rel="stylesheet" type="text/css">
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+
+  <title>Network Security Visualization</title>
+
+  </head>
+
+
+<body>
+
+<!-- The navigation menu -->
+
+ <ul>
+  <li><a href="home.html">Home</a></li>
+  <li><a href="stack-form.html">Stacked Bars Graph</a></li>
+  <li><a href="cal-form.html">Calendar Heatmap</a></li>
+  <li><a href="file-upload.html">Flow File Upload</a></li>
+</ul> 
+
+
+<!-- Get value of the date entered-->
+ <script>
+function foo(){
+  var date = document.getElementById("sdate").value;
+  alert(date);
+  
+}
+</script>
+
+
+  <!-- Description-->
+ 
+      <h2 id="h">Ports Stacked Bar Visual</h2>
+
+      <p>Stacked Bars of hourly incoming connections per day.</p>
+
+
+<!-- Date input form -->
+
+  <form name="form" action = "stackBars.html" method = "get">
+
+  <label>Enter Date: </label>
+
+  <input type = "text" name = "sdate" id = "sdate" value = "year/month/day">
+
+  <button type ="submit" > Submit </button>
+
+  </form>
+
+</body>
+
+</html>
