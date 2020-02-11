@@ -1,22 +1,15 @@
  
 <!DOCTYPE html>
 <html>
-<?php 
-      session_start();
 
-      if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] == false) {
-        header("Location: index.php");
-      }
-  
-      ?>
 
 <head>
 <link href="nav.css" rel="stylesheet" type="text/css">
 
 
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js" charset="utf-8"></script>
 
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 
 <link rel="stylesheet" href="path/to/css/cal-heatmap.css" />
 <script type="text/javascript" src="path/to/cal-heatmap.min.js"></script>
@@ -29,18 +22,22 @@
 
 </head>
 
+
 <!-- The navigation menu -->
 
  <ul>
   <li><a href="home.php">Home</a></li>
-  <li><a href="port-form.php">Ports Stacked Bars</a></li>
-  <li><a href="cal-form.php">Ports Calendar View</a></li>
+  <li><a href="port-form.php">Stacked Bars Graph</a></li>
+  <li><a href="cal-form.php">Calendar Heatmap</a></li>
+  <li><a href="file-upload.php">Flow File Upload</a></li>
   <li style="float:right"><a class="active" href="logout.php">Log Out</a></li>
 </ul> 
 
  <h2 id="h">Ports Calendar Heatmap Visual</h2>
 
 <body>
+
+<p> Calendar Heatmap of daily incoming connections for the selected year. Click on a date for further details. </p>
 	
 <div id="cal-heatmap"></div>
 <script type="text/javascript">
@@ -50,50 +47,69 @@ var url = new URL(url_string);
 var date2str = url.searchParams.get("syear");
 var startDate = new Date(date2str, 0, 1);
 
-//var startDate = new Date(2017, 0, 1);
-var startTimestamp = new Date(2017, 0, 1).getTime()/1000;
 
-
+// test with new dic
 function GAconverter(data) {
 		
+	
 	var i, total, results = {};
 	for(i = 0, total = data.length; i < total; i++) {
-		myDate = data[i]["date"];
-		myDate = myDate.split("/");
+		myDate = Object.keys(data[i]);
+		
+		mynewDate = myDate[0];
+		
+		myDate = mynewDate.split("/");
 		var newDate = myDate[1]+"/"+myDate[2]+"/"+myDate[0];
-		results[new Date(newDate).getTime()/1000] = data[i]["value"];
+		
+		results[new Date(newDate).getTime()/1000] = data[i][mynewDate]['dtotal'];
 		}
-	//console.log(results);
+	
+	
 	return results;
+}
+
+function Event(date) {
+	var date = date.toLocaleDateString("en-US"); 
+	//alert(date);
+
+	window.location = "dailyCalendar.html?date=" + date; 
+
 }
 
 
 var cal = new CalHeatMap();
 cal.init({
-	//itemSelector: "#example-j",
+	//itemSelector: "#onClick",
 	domain: "month",
 	subDomain: "day",
-	data: "total-sum.json",
+	data: "ports-hourlyDaily.json",
 	dataType: "json",
-	cellSize: 20,
+	cellSize: 22, subDomainTextFormat: "%d",
 	domainMargin: 25,
 	domainGutter: -25,
 	start: startDate,
+	minDate: new Date(date2str,1),
+	maxDate:new Date(date2str,12),
 	afterLoadData: GAconverter,
 	range: 12,
 	itemName: "count",
+	browsing: true,
 	//legendHorizontalPosition: "#left",
 	//legendVerticalPosition: "#top",
 	//legendOrientation: "#horizontal",
-	legendMargin: [-15, 0, 0, 0],
+	legendMargin: [-15, 0, 0, 20],
 	legendCellSize: 20,
-	legend: [10000, 20000, 30000, 40000, 50000, 60000, 70000, 80000, 90000],
+	legend: [100000, 200000, 300000, 400000, 500000, 600000, 700000, 800000, 900000],
 	legendColors: {
 		empty: "#ededed",
 		min: "#40ffd8",
 		max: "#f20013"
-	}
+	},
+	onClick: Event
+
+
 });
+
 
 </script>
 </body>
