@@ -1,14 +1,7 @@
  
 <!DOCTYPE html>
 <html>
-<?php 
-      session_start();
 
-      if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] == false) {
-        header("Location: index.php");
-      }
-  
-      ?>
 
 <head>
 <link href="nav.css" rel="stylesheet" type="text/css">
@@ -39,7 +32,6 @@
   <li><a href="port-form.php">Stacked Bars Graph</a></li>
   <li><a href="cal-form.php">Calendar Heatmap</a></li>
   <li><a href="file-upload.php">Flow File Upload</a></li>
-  <li style="float:right"><a class="active" href="logout.php">Log Out</a></li>
 </ul> 
 
  <h2 id="h">Ports Calendar Heatmap Visual</h2>
