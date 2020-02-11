@@ -25,8 +25,6 @@ _Stack Bars_
 _Calendar Heatmap_
 ![Calendar Heatmap](https://raw.githubusercontent.com/Deneb-Algedi/Research/master/calendar.png)
 
-_Daily Calendar_
-![Daily_Calendar](https://raw.githubusercontent.com/Deneb-Algedi/Research/master/dailyCalendar.png)
 
 ## Prerequisites
 1. Web server
