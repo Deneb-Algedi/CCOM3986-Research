@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+
+<link href="nav.css" rel="stylesheet" type="text/css">
+
+
+</head>
+
+
+<body id="body">
+
+ <script>
+function foo(){
+  var year = document.getElementById("syear").value;
+    
+}
+</script>
+
+<title>Network Security Visualization</title>
+
+<!-- The navigation menu -->
+
+ <ul>
+  <li><a href="home.php">Home</a></li>
+  <li><a href="port-form.php">Stacked Bars Graph</a></li>
+  <li><a href="cal-form.php">Calendar Heatmap</a></li>
+  <li><a href="file-upload.php">Flow File Upload</a></li>
+</ul> 
+
+      <h2 id="h">Ports Calendar Heatmap Visual</h2>
+
+      <p>Calendar Heatmap of daily incoming connections per year.</p>
+
+<form name="form" action = "yearCalendar.php" method = "get">
+
+<label>Enter Year: </label>
+
+<input type = "text" name = "syear" id = "syear" value = "year">
+
+<button type ="submit" > Submit </button>
+
+</form>
+
+
+</body>
+
+</html>
